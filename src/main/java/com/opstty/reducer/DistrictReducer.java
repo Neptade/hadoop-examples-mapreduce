@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class DistrictReducer extends Reducer<Text, NullWritable, Text, NullWritable> {
 
-    public void reduce(Text key, Iterable<IntWritable> values, Context context)
+    public void reduce(Text key, Iterable<NullWritable> values, Context context)
             throws IOException, InterruptedException {
         context.write(key, NullWritable.get());
     }
